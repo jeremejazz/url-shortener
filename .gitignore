@@ -1,0 +1,7 @@
+composer.lock
+/tmp
+/vendor
+
+/config/config.ini
+/assets/bower_components/
+/uploads

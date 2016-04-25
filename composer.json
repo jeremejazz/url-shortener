@@ -1,0 +1,13 @@
+{
+    "name": "jereme/19-east-app",
+    "description": "Just a backend scraper",
+    "authors": [
+        {
+            "name": "jeremejazz",
+            "email": "jeremejazz15@yahoo.com"
+        }
+    ],
+     "require": {
+        "bcosca/fatfree-core": "^3.5"
+    } 
+}
