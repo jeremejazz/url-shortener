@@ -1,7 +1,7 @@
 <?php
  
 
-$f3->route('GET|POST /','\Home->index');
+$f3->route('GET|POST /','\home->index');
 $f3->route('GET|POST /r/@hash','\url->r');
 
 $f3->route('GET|POST /@controller','\@controller->index');
