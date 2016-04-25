@@ -12,8 +12,19 @@ class url extends Controller{
  				$url_text = $this->f3->get("POST.url");
  			 	$hash = substr(md5(uniqid(rand(1,6))), 0, 8);
  				$url = new \Url_model($this->db);
- 				$url->add($hash, $url_text);
 
+ 				//check if hash exists
+ 				while(true){
+
+					$check = $url->getByHash( $hash );
+					if (empty($check)){
+						break;
+					}else{
+						$hash = substr(md5(uniqid(rand(1,6))), 0, 8);
+					}
+ 				}
+
+ 				$url->add($hash, $url_text);
  				$this->f3->set('link' , $hash);
  				$this->f3->set('view', 'shortened.htm');
 
@@ -40,7 +51,7 @@ class url extends Controller{
 			}else{
 
 				$this->f3->reroute($result[0]['url']);
-				
+
 			}
 			
 		}	
